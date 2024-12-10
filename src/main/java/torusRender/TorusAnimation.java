@@ -5,21 +5,20 @@ import java.awt.*;
 import java.util.Arrays;
 
 public class TorusAnimation extends JPanel {
-    private double A = 0, B = 0; // Rotation angles
-    private final int CHAR_WIDTH = 10; // Width of a character in pixels
-    private final int CHAR_HEIGHT = 10; // Height of a character in pixels
-    private final int ROWS = 80; // Number of rows for the torus
-    private final int COLS = 80; // Number of columns for the torus
-    private final int TOTAL_PIXELS = ROWS * COLS; // Total number of torus pixels
+    private double A = 0, B = 0; 
+    private final int CHAR_WIDTH = 10;
+    private final int CHAR_HEIGHT = 10; 
+    private final int ROWS = 80; 
+    private final int COLS = 80; 
+    private final int TOTAL_PIXELS = ROWS * COLS; 
     private final double[] z = new double[TOTAL_PIXELS];
     private final char[] b = new char[TOTAL_PIXELS];
 
     public TorusAnimation() {
-        // Timer to update the animation at regular intervals
         Timer timer = new Timer(30, e -> {
             A += 0.04;
             B += 0.02;
-            repaint(); // Repaint the panel with updated torus
+            repaint(); 
         });
         timer.start();
     }
